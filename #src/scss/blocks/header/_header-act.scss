@@ -1,0 +1,117 @@
+.header-act{
+
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding:0 20px;
+  height: 100%;
+  background-color: #151515;
+  &__item{
+    position:relative;
+    min-width: 33px;
+    height: 40px;
+    &:not(:first-of-type){ margin-left: 20px}
+
+  }
+  &__icon{
+    position:absolute;
+    width: 33px;
+    height: 40px;
+    z-index: 30 ;
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+
+    &.is-sportground{
+      background-image: url( $cdn + '/betinia/icons/new.svg');
+    }
+    &.is-chellenges{
+      background-image: url( $cdn + '/betinia/icons/chellenges.svg');
+    }
+  }
+  &__text{
+
+  }
+
+  @include bp-1440{
+    &__item:not(:first-of-type){ margin-left: 32px}
+
+  }
+
+  @include bp-1920{
+    &__text{
+      height: 30px;
+      background: #3A0D50;
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+      line-height: 30px;
+      margin-top:5px;
+      padding:0 20px 0 30px;
+      margin-left:12px;
+      clip-path: polygon(0% 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+
+      font-style: italic;
+      font-weight: 500;
+      font-size: 16px;
+      color: #03F295;
+    }
+    &__item:not(:first-of-type){ margin-left: 20px}
+  }
+  @include bp-1920-max{
+
+    &__text{
+      position:absolute;
+      left: 50%;
+      top: calc(100% + 7px);
+      height: 44px;
+      line-height: 44px;
+      background-color: #460069;
+      padding:0 10px;
+      transform: translateX(-50%) translateY(10px);
+      box-shadow: 0 4px 0 rgba(0,0,0,0.3) , 0 -1px 0 #62267F;
+      z-index: 50;
+      opacity: 0;
+      transition: 0.3s;
+      display: none;
+      &::before{
+        content: '';
+        position:absolute;
+        left: calc( 50% - 8px) ;
+        top: -8px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: solid 8px transparent;
+        border-right: solid 8px transparent;
+        border-bottom:solid 9px #460069;
+        filter: drop-shadow( 0 -2px 0 #62267F );
+      }
+
+      .header-act__item:hover &{
+        display: block;
+        animation: showActTooltip 0.2s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      //display: none;
+      //height: 30px;
+      //background: #3A0D50;
+      //box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+      //line-height: 30px;
+      //margin-top:5px;
+      //padding:0 20px 0 30px;
+      //margin-left:12px;
+      //clip-path: polygon(0% 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      //
+      //font-style: italic;
+      //font-weight: 500;
+      //font-size: 16px;
+      //color: #03F295;
+    }
+  }
+}
+@keyframes showActTooltip {
+
+  0%{ opacity: 0; transform: translateX(-50%) translateY(10px);}
+  100%{ opacity: 1; transform: translateX(-50%) translateX(0px);}
+
+}

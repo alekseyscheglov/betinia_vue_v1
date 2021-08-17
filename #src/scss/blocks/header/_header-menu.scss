@@ -1,0 +1,35 @@
+.header-menu {
+
+  position: relative;
+  padding: 0 35px 0 55px;
+  width: 100%;
+  height: 100%;
+
+  &__arrow {
+    position: absolute;
+    width: 25px !important;
+    min-width: 25px !important;
+    top: calc(50% - 21px);
+    left: 22px;
+    background-position: center;
+    &.is-next {
+      left: auto;
+      right: 2px;
+    }
+  }
+
+  .layout-horizontal {
+    position: absolute;
+    width: calc(100% - 90px);
+    top: 0;
+    left: 55px;
+    &.has-scroll-snap {
+      scroll-snap-type: x proximity;
+    }
+  }
+
+  .header-nav__item {
+    scroll-snap-align: start;
+  }
+
+}

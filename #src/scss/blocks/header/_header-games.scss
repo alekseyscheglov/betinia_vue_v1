@@ -1,0 +1,77 @@
+.header-games{
+  height: 62px;
+  background-color: #0F0F0F;
+  &__container{
+    display: flex;
+    align-items: center;
+    padding:10px 10px 10px 80px;
+    width: 100%;
+  }
+  &__wrap{
+
+    height: 40px;
+    overflow: hidden;
+    flex-grow: 1;
+    margin-right: auto;
+    display: flex;
+  }
+  &__scroll{
+    height: 65px;
+    max-width: calc(100% - 40px);
+    flex-grow: 1;
+    overflow: auto;
+
+  }
+  &__arr{
+    width: 20px;
+    flex-shrink: 0;
+    height: 40px;
+    background-image: var(--icon-arr-slide);
+    background-position:  right center;
+    background-repeat: no-repeat;
+    background-size: 9px 16px;
+    filter:$filter6C7476;
+    cursor:pointer;
+    &:hover{ filter:$filterWhite;}
+    &.is-prev{ transform: rotate(180deg)}
+    &.is-disable{ opacity: 0.3; cursor:default;}
+  }
+  &__list{
+    display: flex;
+    height: 40px;
+    width: 20px;
+  }
+  &__item{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #AAAAAA;
+
+
+    white-space: nowrap;
+    flex-shrink: 0;
+    &:not(:first-of-type){ margin-left:20px;}
+    &:hover{ color:#fff;}
+    &.active{ color: $green;}
+  }
+  &__btns{
+    flex-shrink: 0;
+    padding-left:20px;
+  }
+  &__btn:not(:first-of-type){ margin-left:10px;}
+  @include bp-1440{
+    &__arr{ display: none;}
+    &__container{ padding:10px 10px 10px 170px;}
+
+  }
+  @include bp-1920{
+    &__container{
+      //border:solid 1px red;
+      padding:10px;
+      max-width: 1792px;
+      margin:0 auto;
+      width: calc( 100% - (184px * 2));
+    }
+  }
+}

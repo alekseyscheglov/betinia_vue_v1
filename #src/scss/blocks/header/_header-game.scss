@@ -1,0 +1,81 @@
+.header-game{
+  position:relative;
+  height: 62px;
+  background-color: #191919;
+  display: flex;
+
+  &__l{
+    height: 62px;
+    display: flex;
+    align-items: center;
+    padding: 0 60px 0 14px;
+    background-color: #151515;
+  }
+  &__info{
+    padding-left:14px;
+  }
+  &__row{
+    display: flex;
+    align-items: center;
+  }
+  &__name{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    color: #CFCFCF;
+    text-transform: uppercase;
+    @include fontDin;
+  }
+  &__brand{
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #AAAAAA;
+  }
+  &__fav{
+    width: 16px;
+    height: 16px;
+    margin-left:5px;
+    //border:solid 1px red;
+    cursor: pointer;
+    display: block;
+    //position:absolute;
+    //top: 8px;
+    //right: 8px;
+    background-image: var(--icon-star-grey-stroke);
+    //filter: $filterWhite;
+    @include contain;
+    //&:hover{ filter:$filter6C7476; }
+    &.active {
+      background-image: var(--icon-star);
+      filter: $filterGreen;
+    }
+
+  }
+  &__logo{
+    position:absolute;
+    width: 150px;
+    height: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: var(--icon-logo);
+    background-size: 110px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: $filterGreen;
+    cursor:pointer;
+  }
+
+
+  &__ubox{
+    margin-left:auto;
+    display: flex;
+    align-items: center;
+    background-color: #1F1F1F;
+    padding:0 24px 0 32px;
+  }
+
+}

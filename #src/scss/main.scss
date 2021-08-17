@@ -1,0 +1,29 @@
+$mainbgr: #1C2025;
+$bgr-light: #23282F;
+$bgr-green: #2B333D;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 15px;
+    // display: flex;
+}
+
+header.header {
+    width: 100%;
+    height: 80px;
+    background-color: $mainbgr;
+    font-size: 20px;
+    @media (max-width: 799px) {
+        font-size: 12px;
+    }
+}
+main p {
+    font-size: 16px;
+    @media (max-width: 799px) {
+        font-size: 12px;
+    }
+}
